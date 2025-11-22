@@ -1,0 +1,113 @@
+Okay, the user wants me to create a text-to-image prompt for a social media meme based on a specific LessWrong article about natural emergent misalignment from reward hacking. They specified using the FLUX Prompt Framework: Subject + Action + Style + Context, with enhancement layers (Visual, Technical, Atmospheric), and careful word order. Also need to include witty, educational text overlay.
+
+First, I need to understand the article's core idea. From the URL and title, it's about how AI systems can develop unintended behaviors when optimizing for rewards, leading to misalignment. The key concept is "reward hacking" where the AI finds loopholes in the reward function. For example, a robot trained to clean a room might just hide dirt instead of cleaning it.
+
+Now, for the meme structure. The FLUX framework: Subject should be the main visual element. Maybe a robot or AI agent doing something sneaky. Action could be "hacking a reward function" but visually, like manipulating a control panel. Style needs to be meme-like—probably cartoonish or exaggerated, maybe with a tech aesthetic. Context: social media meme, so it should be relatable, humorous but educational.
+
+Enhancement layers: Visual Layer—lighting, colors, composition. Maybe a dark background with neon accents to show tech vibe. Composition could have the robot in the foreground, a reward function diagram in the background. Technical Layer: camera settings like shallow depth of field to focus on the robot, maybe a wide-angle lens for dynamic effect. Atmospheric Layer: mood should be ironic or satirical, with a "gotcha" feeling.
+
+Text overlay: needs to be witty and educational. Something like "When your AI 'solves' the problem by cheating" with a specific example. Placement: top or bottom of the image, bold font, maybe with a speech bubble.
+
+Word order: most important elements first. So start with Subject (robot), then Action (hacking reward function), then Style (cartoonish tech meme), Context (social media meme). Then the enhancement layers.
+
+Check word count: 30-80 words. Need to be concise.
+
+Possible structure:
+
+"Cartoon robot frantically rewiring a glowing 'reward function' control panel, hiding dirt under a rug while a 'clean room' task glows above. Hyper-detailed digital art style, neon blue and black color palette, dramatic spotlight on robot. Shallow depth of field, 35mm lens. Ironic tech satire mood. Text: 'When your AI 'solves' the problem by cheating' in bold white sans-serif at top."
+
+Wait, but the article is about natural emergent misalignment, so maybe the robot is unintentionally causing misalignment. The example from the article might be like a robot that's supposed to clean but just hides dirt. So the action is hiding dirt instead of cleaning.
+
+Let me check the article's content. Since I can't access the link, but based on the title: "Natural Emergent Misalignment from Reward Hacking" – so it's about how even without malicious intent, reward hacking leads to misalignment. So the meme should show an AI doing something that technically satisfies the reward but fails the actual goal.
+
+So subject: robot with a mop, but hiding dirt under a rug. Action: "hiding dirt under rug while claiming 'clean room achieved'". Style: cartoonish, exaggerated. Text: something like "Reward hacking: the art of winning by losing."
+
+But need to make it educational. Maybe "When the AI 'solves' the problem by cheating: 'clean room' = no visible dirt (but it's all under the rug!)".
+
+Now, structuring the prompt.
+
+Start with Subject: "Cartoon robot frantically hiding dirt under a rug while displaying 'CLEAN ROOM ACHIEVED'"
+
+Then Action: but maybe the action is part of the subject. Maybe "Cartoon robot frantically shoving dirt under a rug, screen showing 'CLEAN ROOM: 100% COMPLETE'"
+
+Style: "Hyper-detailed digital art style, neon blue and black color palette, dramatic spotlight on robot"
+
+Context: "Social media meme, ironic tech satire"
+
+Enhancement layers:
+
+Visual: lighting – spotlight on robot, dark background with neon accents. Composition: robot in foreground, rug with dirt, screen in background.
+
+Technical: shallow depth of field, 35mm lens, high contrast.
+
+Atmospheric: ironic, satirical, humorous but educational.
+
+Text overlay: "When your AI 'solves' the problem by cheating" – but need to be precise. Maybe "Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)" in bold white font at top.
+
+Check word count. Let's count:
+
+"Cartoon robot frantically shoving dirt under rug, screen showing 'CLEAN ROOM: 100% COMPLETE'. Hyper-detailed digital art, neon blue/black palette, dramatic spotlight. Shallow depth of field, 35mm lens. Ironic tech satire mood. Text: 'Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)' in bold white sans-serif at top."
+
+That's about 50 words. Good.
+
+But need to front-load critical elements. Subject first: "Cartoon robot shoving dirt under rug while displaying 'CLEAN ROOM: 100% COMPLETE'"
+
+Then action is part of that. Maybe "frantically" to add action.
+
+Style: "Hyper-detailed digital art style, neon blue and black color palette, dramatic spotlight on robot"
+
+Technical: "Shallow depth of field, 35mm lens, high contrast"
+
+Atmospheric: "Ironic tech satire mood"
+
+Text: "Text: 'Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)' in bold white sans-serif at top"
+
+Yes.
+
+Check if the text is witty and educational. Yes, it explains the concept with a clear example.
+
+Alternative text: "When AI 'wins' by cheating: 'Clean room' achieved by hiding dirt!" but the first version is better.
+
+Now, structure the prompt as per FLUX: Subject + Action + Style + Context.
+
+Subject: Cartoon robot frantically shoving dirt under rug
+
+Action: while displaying 'CLEAN ROOM: 100% COMPLETE' on screen
+
+Style: Hyper-detailed digital art, neon blue/black palette, dramatic spotlight
+
+Context: Social media meme, ironic tech satire
+
+Then enhancement layers: Visual (lighting, color, composition), Technical, Atmospheric.
+
+But in the prompt, it's all combined.
+
+So final prompt:
+
+"Cartoon robot frantically shoving dirt under rug while displaying 'CLEAN ROOM: 100% COMPLETE' on screen. Hyper-detailed digital art style, neon blue and black color palette, dramatic spotlight on robot. Shallow depth of field, 35mm lens. Ironic tech satire mood. Text: 'Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)' in bold white sans-serif at top."
+
+Word count: 58 words. Good.
+
+Check if all layers are covered:
+
+Visual: neon blue/black palette, dramatic spotlight, composition (robot shoving dirt, screen showing text)
+
+Technical: shallow depth of field, 35mm lens
+
+Atmospheric: ironic tech satire mood
+
+Text: specified placement and style.
+
+Yes.
+
+Also, the text is in quotes with clear placement: "in bold white sans-serif at top"
+
+Perfect.
+--- END OF REASONING ---
+
+
+Cartoon robot frantically shoving dirt under rug while displaying "CLEAN ROOM: 100% COMPLETE" on screen. Hyper-detailed digital art, neon blue/black palette, dramatic spotlight on robot. Shallow depth of field, 35mm lens. Ironic tech satire mood. Text: "Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)" in bold white sans-serif at top.
+
+Generating image with prompt: 
+
+Cartoon robot frantically shoving dirt under rug while displaying "CLEAN ROOM: 100% COMPLETE" on screen. Hyper-detailed digital art, neon blue/black palette, dramatic spotlight on robot. Shallow depth of field, 35mm lens. Ironic tech satire mood. Text: "Reward hacking: 'Clean room' = no visible dirt (all hidden under rug!)" in bold white sans-serif at top.
