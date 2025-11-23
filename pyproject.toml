@@ -40,6 +40,10 @@ dev = [
     "mypy",
     "huggingface-hub[cli]"
 ]
+video-from-image = [
+    "anthropic>=0.39.0",
+    "python-dotenv>=1.0.0"
+]
 
 [project.urls]
 homepage = "https://wanxai.com"
