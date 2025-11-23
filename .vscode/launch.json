@@ -75,6 +75,34 @@
             ]
         },
         {
+            "name": "Inference: I2V Vace 1.3B - Faster Inference",
+            "type": "python",
+            "request": "launch",
+            "program": "generate.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--task",
+                "vace-1.3B",
+                "--size",
+                "832*480",
+                "--ckpt_dir",
+                "/home/ubuntu/karthik-ragunath-ananda-kumar-utah/unianimate-dit/Wan2.1-VACE-1.3B",
+                "--image",
+                "video_gen_prompts/generated_image.png",
+                "--prompt",
+                "create a video with this context image where you just modify the background color randomly after every 10 frames",
+                "--sample_steps",
+                "25",
+                "--frame_num",
+                "41",
+                "--offload_model",
+                "true",
+                // "--sample_fps",
+                // "8"
+            ]
+        },
+        {
             "name": "Generate Video from Image + Reasoning (Claude)",
             "type": "python",
             "request": "launch",
