@@ -103,6 +103,34 @@
             ]
         },
         {
+            "name": "Inference: I2V Vace 1.3B - Faster Inference - Integrated",
+            "type": "python",
+            "request": "launch",
+            "program": "generate_integrated.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--task",
+                "vace-1.3B",
+                "--size",
+                "832*480",
+                "--ckpt_dir",
+                "/home/ubuntu/karthik-ragunath-ananda-kumar-utah/unianimate-dit/Wan2.1-VACE-1.3B",
+                "--src_ref_images",
+                "video_gen_prompts/generated_image.png",
+                "--prompt",
+                "create a video you make the robot in the reference image dance in a coherent way. Keep whatever text is in the reference image constant across all frames",
+                "--sample_steps",
+                "25",
+                "--frame_num",
+                "41",
+                "--offload_model",
+                "true",
+                // "--sample_fps",
+                // "8"
+            ]
+        },
+        {
             "name": "Generate Video from Image + Reasoning (Claude)",
             "type": "python",
             "request": "launch",
