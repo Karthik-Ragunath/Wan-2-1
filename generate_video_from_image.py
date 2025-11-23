@@ -10,13 +10,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-
-try:
-    import anthropic
-except ImportError:
-    print("Error: anthropic package not found. Installing...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "anthropic"])
-    import anthropic
+import anthropic
 
 
 def encode_image_to_base64(image_path: str) -> str:
