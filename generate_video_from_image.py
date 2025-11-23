@@ -303,14 +303,14 @@ def main():
     print("GENERATING VIDEO...")
     print("-"*80)
     
-    generate_video(
-        prompt=video_prompt,
-        task=args.task,
-        size=args.size,
-        ckpt_dir=args.ckpt_dir,
-        output_dir=args.output_dir,
-        additional_args=unknown_args
-    )
+    # generate_video(
+    #     prompt=video_prompt,
+    #     task=args.task,
+    #     size=args.size,
+    #     ckpt_dir=args.ckpt_dir,
+    #     output_dir=args.output_dir,
+    #     additional_args=unknown_args
+    # )
     
     print("\n" + "="*80)
     print("✓ COMPLETE!")
