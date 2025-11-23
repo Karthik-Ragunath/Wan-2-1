@@ -91,7 +91,7 @@
                 "--src_ref_images",
                 "video_gen_prompts/generated_image.png",
                 "--prompt",
-                "create a video you make the robot in the reference image dance in a coherent way",
+                "create a video you make the robot in the reference image dance in a coherent way. Keep whatever text is in the reference image constant across all frames",
                 "--sample_steps",
                 "25",
                 "--frame_num",

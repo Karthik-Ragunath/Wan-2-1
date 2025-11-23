@@ -6,7 +6,7 @@ import sys
 
 invoke_url = "https://ai.api.nvidia.com/v1/vlm/nvidia/vila"
 stream = False
-query = "Describe the scene"
+query = "Describe the image given"
 
 kApiKey = os.getenv("TEST_NVCF_API_KEY", "")
 assert kApiKey, "Generate API_KEY and export TEST_NVCF_API_KEY=xxxx"
