@@ -91,7 +91,7 @@
                 "--src_ref_images",
                 "video_gen_prompts/generated_image.png",
                 "--prompt",
-                "create a video with this context image where you just modify the background color randomly after every 10 frames",
+                "create a video you make the robot in the reference image dance in a coherent way",
                 "--sample_steps",
                 "25",
                 "--frame_num",
