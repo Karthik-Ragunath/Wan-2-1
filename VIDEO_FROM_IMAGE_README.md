@@ -6,17 +6,43 @@ This script takes a generated image and its reasoning trace, uses Claude (Anthro
 
 1. **Anthropic API Key**: Get one from [https://console.anthropic.com/](https://console.anthropic.com/)
 2. **Wan 2.1 Model**: Ensure you have the video generation model downloaded
-3. **Python packages**: The script will auto-install `anthropic` if needed
+3. **Python packages**: Install required packages:
+   ```bash
+   pip install anthropic python-dotenv
+   ```
+
+## Setup API Key
+
+You have three options to provide your Anthropic API key:
+
+### Option 1: Using .env file (Recommended)
+
+```bash
+# Copy the example file
+cp env.example .env
+
+# Edit .env and add your API key
+# ANTHROPIC_API_KEY=sk-ant-your-actual-key-here
+```
+
+### Option 2: Environment Variable
+
+```bash
+export ANTHROPIC_API_KEY="sk-ant-your-api-key-here"
+```
+
+### Option 3: Command Line Argument
+
+```bash
+python generate_video_from_image.py --api-key "sk-ant-your-api-key-here"
+```
 
 ## Quick Start
 
 ### Basic Usage
 
 ```bash
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY="your-api-key-here"
-
-# Generate video from default files
+# After setting up API key (using .env file or export)
 python generate_video_from_image.py
 ```
 

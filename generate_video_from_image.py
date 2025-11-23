@@ -10,6 +10,15 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("Warning: python-dotenv not installed. Install with: pip install python-dotenv")
+    print("Falling back to system environment variables only.\n")
+
 import anthropic
 
 
@@ -248,8 +257,12 @@ def main():
     # Get API key
     api_key = args.api_key or os.environ.get("ANTHROPIC_API_KEY")
     if not api_key and not args.skip_claude:
-        print("✗ Error: Anthropic API key required. Set --api-key or ANTHROPIC_API_KEY env var")
-        print("   Or use --skip-claude to use the original prompt without Claude enhancement")
+        print("✗ Error: Anthropic API key required.")
+        print("   Options:")
+        print("   1. Create a .env file with: ANTHROPIC_API_KEY=sk-ant-...")
+        print("   2. Set environment variable: export ANTHROPIC_API_KEY=sk-ant-...")
+        print("   3. Use --api-key flag: --api-key sk-ant-...")
+        print("   4. Use --skip-claude to skip Claude and use original prompt")
         sys.exit(1)
     
     print("="*80)
