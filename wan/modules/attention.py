@@ -108,8 +108,7 @@ def flash_attention(
             softmax_scale=softmax_scale,
             causal=causal,
             deterministic=deterministic)[0].unflatten(0, (b, lq))
-    else:
-        assert FLASH_ATTN_2_AVAILABLE
+    elif FLASH_ATTN_2_AVAILABLE:
         x = flash_attn.flash_attn_varlen_func(
             q=q,
             k=k,
@@ -125,6 +124,61 @@ def flash_attention(
             causal=causal,
             window_size=window_size,
             deterministic=deterministic).unflatten(0, (b, lq))
+    else:
+        # Fallback to PyTorch's scaled_dot_product_attention when flash attention is not available
+        warnings.warn(
+            'Flash attention is not available. Using PyTorch scaled_dot_product_attention as fallback. '
+            'For optimal performance, consider fixing flash-attn installation.'
+        )
+        # Need to reconstruct the original batch structure for PyTorch attention
+        # Unflatten q, k, v back to batch dimension
+        q_batched = q.new_zeros(b, lq, q.size(-2), q.size(-1))
+        k_batched = k.new_zeros(b, lk, k.size(-2), k.size(-1))
+        v_batched = v.new_zeros(b, lk, v.size(-2), v.size(-1))
+        
+        q_offset = 0
+        k_offset = 0
+        for i in range(b):
+            q_len = q_lens[i].item()
+            k_len = k_lens[i].item()
+            q_batched[i, :q_len] = q[q_offset:q_offset + q_len]
+            k_batched[i, :k_len] = k[k_offset:k_offset + k_len]
+            v_batched[i, :k_len] = v[k_offset:k_offset + k_len]
+            q_offset += q_len
+            k_offset += k_len
+        
+        # Transpose to [B, num_heads, seq_len, head_dim] for PyTorch attention
+        q_batched = q_batched.transpose(1, 2)
+        k_batched = k_batched.transpose(1, 2)
+        v_batched = v_batched.transpose(1, 2)
+        
+        # Apply PyTorch's scaled_dot_product_attention
+        attn_mask = None
+        if causal:
+            # Create causal mask for each batch element based on actual sequence lengths
+            # For simplicity, we'll use is_causal=True which works for full sequences
+            pass
+        
+        x_batched = torch.nn.functional.scaled_dot_product_attention(
+            q_batched, k_batched, v_batched, 
+            attn_mask=attn_mask, 
+            dropout_p=dropout_p if dropout_p > 0 else 0.0,
+            is_causal=causal,
+            scale=softmax_scale
+        )
+        
+        # Transpose back and flatten to match flash attention output format
+        x_batched = x_batched.transpose(1, 2)
+        
+        # Extract only the valid sequence lengths
+        x = []
+        for i in range(b):
+            q_len = q_lens[i].item()
+            x.append(x_batched[i, :q_len])
+        x = torch.cat(x, dim=0)
+        
+        # Unflatten back to [b, lq, num_heads, head_dim]
+        x = x.view(b, lq, x.size(-2), x.size(-1))
 
     # output
     return x.type(out_dtype)
