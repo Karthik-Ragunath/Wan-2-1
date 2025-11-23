@@ -88,7 +88,7 @@
                 "832*480",
                 "--ckpt_dir",
                 "/home/ubuntu/karthik-ragunath-ananda-kumar-utah/unianimate-dit/Wan2.1-VACE-1.3B",
-                "--image",
+                "--src_ref_images",
                 "video_gen_prompts/generated_image.png",
                 "--prompt",
                 "create a video with this context image where you just modify the background color randomly after every 10 frames",
