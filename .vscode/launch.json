@@ -71,7 +71,51 @@
                 "--frame_num",
                 "41",
                 "--offload_model",
-                "false"
+                "true"
+            ]
+        },
+        {
+            "name": "Generate Video from Image + Reasoning (Claude)",
+            "type": "python",
+            "request": "launch",
+            "program": "generate_video_from_image.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "ANTHROPIC_API_KEY": "${env:ANTHROPIC_API_KEY}"
+            },
+            "args": [
+                "--image",
+                "video_gen_prompts/generated_image.png",
+                "--text",
+                "video_gen_prompts/prompt+reasoning.txt",
+                "--task",
+                "t2v-14B",
+                "--size",
+                "1280*720",
+                "--ckpt_dir",
+                "./Wan2.1-T2V-14B"
+            ]
+        },
+        {
+            "name": "Generate Video from Image + Reasoning (Skip Claude)",
+            "type": "python",
+            "request": "launch",
+            "program": "generate_video_from_image.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--image",
+                "video_gen_prompts/generated_image.png",
+                "--text",
+                "video_gen_prompts/prompt+reasoning.txt",
+                "--task",
+                "t2v-14B",
+                "--size",
+                "1280*720",
+                "--ckpt_dir",
+                "./Wan2.1-T2V-14B",
+                "--skip-claude"
             ]
         }
     ]
